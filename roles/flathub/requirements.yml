@@ -1,0 +1,6 @@
+---
+# requirements.yml for flathub
+
+collections:
+  - name: "community.general"
+...

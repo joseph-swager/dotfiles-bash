@@ -1,0 +1,33 @@
+package_upgrade: yes
+packages:
+  - ansible
+  - build-essential
+  - curl
+  - htop
+  - jq
+  - libbz2-dev
+  - libffi-dev
+  - liblzma-dev
+  - libncurses5-dev
+  - libreadline-dev
+  - libsqlite3-dev
+  - libssl-dev
+  - llvm
+  - make
+  - tk-dev
+  - wget
+  - tree
+  - xz-utils
+  - zlib1g-dev
+  # Pre-req for adding repo for sublime text
+  - apt-transport-https
+
+  # GUI
+  - chromium-browser
+  - gnome-boxes
+  - gnome-icon-theme
+  - gnome-keyring
+  - i3lock
+
+# remove_packages:
+#   - gnome-shell-extension-ubuntu-dock
