@@ -1,0 +1,17 @@
+- name: Add ruby plugin
+  command: "asdf plugin-add ruby"
+  register: ruby_add
+  failed_when: ruby_add == 2
+  tags:
+    - ruby
+
+- name: "Install ruby versions"
+  command: asdf install ruby {{item}}
+  loop: "{{versions}}"
+  tags:
+    ruby
+
+- name: Set global version for ruby to {{versions[0]}}
+  command: "asdf global ruby {{versions[0]}}"
+  tags:
+    ruby

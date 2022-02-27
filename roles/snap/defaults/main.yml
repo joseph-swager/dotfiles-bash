@@ -1,0 +1,3 @@
+snaps:
+  - kubectl
+  - microk8s

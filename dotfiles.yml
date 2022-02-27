@@ -28,9 +28,9 @@
     # - role: golang
     #   tags:
     #     - golang
-    # - role: ruby
-    #   tags:
-    #     - ruby
+    - role: ruby
+      tags:
+        - ruby
     - role: erlang
       tags:
         - erlang
@@ -40,6 +40,9 @@
     - role: flathub
       tags:
         - flathub
+    - role: snap
+      tags:
+        - snap
     # - role: node
     #   tags:
     #     - node

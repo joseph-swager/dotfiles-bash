@@ -21,6 +21,7 @@ packages:
   - zlib1g-dev
   # Pre-req for adding repo for sublime text
   - apt-transport-https
+  - docker.io
 
   # GUI
   - chromium-browser
@@ -28,6 +29,9 @@ packages:
   - gnome-icon-theme
   - gnome-keyring
   - i3lock
+
+  # Apps
+  - sublime-text
 
 # remove_packages:
 #   - gnome-shell-extension-ubuntu-dock
