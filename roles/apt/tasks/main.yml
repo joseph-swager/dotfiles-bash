@@ -41,6 +41,7 @@
   tags:
     - "apt"
 
+# leave if we ever need to remove packages
 # - name: Remove apt packages
 #   apt:
 #     name: "{{ item }}"

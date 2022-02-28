@@ -31,6 +31,9 @@
     - role: ruby
       tags:
         - ruby
+    - role: rust
+      tags:
+        - rust
     - role: erlang
       tags:
         - erlang

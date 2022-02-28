@@ -24,4 +24,5 @@
   become: true
   tags:
     - "flathub"
+    - "photo"
 ...

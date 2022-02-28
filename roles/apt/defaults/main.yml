@@ -14,6 +14,7 @@ packages:
   - libssl-dev
   - llvm
   - make
+  - gcc
   - tk-dev
   - wget
   - tree
@@ -34,5 +35,6 @@ packages:
   # Apps
   - sublime-text
 
+# leave for removing packages
 # remove_packages:
 #   - gnome-shell-extension-ubuntu-dock

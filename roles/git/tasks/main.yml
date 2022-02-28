@@ -1,27 +1,47 @@
-- name: Install git
+- name: "Install git"
   apt: name=git state=present
   become: yes
   become_user: root
   become_method: sudo
+  tags:
+    - "git"
+    - "repository"
+    - "development"
 
-- name: Link global gitignore file
+- name: "Link global gitignore file"
   file:
     src: "{{ dotfiles_home }}/gitignore_global.link"
     dest: "{{ dotfiles_user_home }}/.gitignore_global"
     state: link
     force: yes
+  tags:
+    - "git"
+    - "repository"
+    - "development"
 
-- name: Check if gitconfig exists
+- name: "Check if gitconfig exists"
   stat: path="{{dotfiles_user_home}}/.gitconfig"
   register: gitconfig_stat
+  tags:
+    - "git"
+    - "repository"
+    - "development"
 
-- name: Back up gitconfig
+- name: "Back up gitconfig"
   command: mv ~/.gitconfig ~/.gitconfig.bak
   args:
     creates: "{{dotfiles_user_home}}/.gitconfig.bak"
   when: gitconfig_stat.stat.exists
+  tags:
+    - "git"
+    - "repository"
+    - "development"
 
-- name: Make sure gitconfig is up to date
+- name: "Make sure gitconfig is up to date"
   template:
     src: "gitconfig.j2"
     dest: "{{dotfiles_user_home}}/.gitconfig"
+  tags:
+    - "git"
+    - "repository"
+    - "development"

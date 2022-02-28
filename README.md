@@ -1,4 +1,5 @@
 # dotfiles-bash
+This system development setup with dotfiles works with Debian/Ubuntu/PopOS based systems. However, if your system doesn't support flatpaks from flat hub or snaps please comment these out and isntall the packeges by other means.
 
 
 Steps to run Ansible Script to install

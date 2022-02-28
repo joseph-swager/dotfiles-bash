@@ -1,4 +1,4 @@
-- name: Install snap packages
+- name: "Install snap packages"
   snap:
     name: "{{ item }}"
     classic: yes
@@ -8,3 +8,4 @@
   loop: "{{ snaps }}"
   tags:
     - "snap"
+    - "development"
