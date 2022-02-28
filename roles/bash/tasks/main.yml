@@ -3,16 +3,47 @@
   register: alias_stat
   tags:
     - "bash"
+    - "aliases"
 
 - name: "Back up .bash_aliases"
-  command: mv {{dotfiles_user_home}}/.bash_aliases {{dotfiles_user_home}}/.bash_aliases.bak
+  command: mv {{dotfiles_user_home}}/.bash_aliases {{dotfiles_user_home}}/.dotfiles/.bash_aliases.bak
   args:
-    creates: "{{dotfiles_user_home}}/.bash_aliases.bak"
+    creates: "{{dotfiles_user_home}}/.dotfiles/.bash_aliases.bak"
   when: alias_stat.stat.exists
   tags:
     - "bash"
+    - "aliases"
 
-- name: "Move new .bash_aliases"
-  command: mv {{ dotfiles_home }}/alias {{dotfiles_user_home}}/.bash_aliases
+- name: "Make sure .bash_aliases is up to date"
+  template:
+    src: "alias.j2"
+    dest: "{{dotfiles_user_home}}/.bash_aliases"
   tags:
     - "bash"
+    - "aliases"
+
+# .bashrc 
+
+- name: "Check if .bashrc exists"
+  stat: path="{{dotfiles_user_home}}/.bashrc"
+  register: bashrc_stat
+  tags:
+    - "bash"
+    - "bashrc"
+
+- name: "Back up .bashrc"
+  command: mv {{dotfiles_user_home}}/.bashrc {{dotfiles_user_home}}/.dotfiles/.bashrc.bak
+  args:
+    creates: "{{dotfiles_user_home}}/.dotfiles/.bashrc.bak"
+  when: bashrc_stat.stat.exists
+  tags:
+    - "bash"
+    - "bashrc"
+
+- name: "Make sure .bashrc is up to date"
+  template:
+    src: "bashrc.j2"
+    dest: "{{dotfiles_user_home}}/.bashrc"
+  tags:
+    - "bash"
+    - "bashrc"

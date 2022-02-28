@@ -19,6 +19,7 @@ packages:
   - tree
   - xz-utils
   - zlib1g-dev
+  - xclip
   # Pre-req for adding repo for sublime text
   - apt-transport-https
   - docker.io

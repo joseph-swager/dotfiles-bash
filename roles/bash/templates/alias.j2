@@ -1,3 +1,4 @@
+# git aliases
 alias gb='git branch'
 alias gbd='git branch -D'
 alias gco='git checkout'
@@ -6,9 +7,15 @@ alias gst='git status'
 alias gp='git pull --rebase'
 alias gcs='git commit -S'
 alias gd='git diff'
+alias gaa='git add .'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 
 # source ~/.bashrc
-alias sc="source $HOME/.bashrc"
+alias sbrc="source $HOME/.bashrc"
 
 # kubectl aliases
 alias k="kubectl"
@@ -48,3 +55,8 @@ function gsync() {
  git pull upstream "$1" && \
  git push origin "$1"
 }
+
+
+# Xclip copy paste made easy
+alias clipcopy="xclip -sel clip"
+alias clippaste="xclip -out -sel clip"

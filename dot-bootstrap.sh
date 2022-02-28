@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
 set -e
+declare _tags _installDir _homeDotDir
 
-tags="$1"
+_tags="$1"
 
-if [ -z $tags ]; then
-  tags="all"
+if [ -z $_tags ]; then
+  _tags="all"
 fi
 
 
-DOT_DIR="${HOME}/.dotfiles"
-if ! [ -d "$DOT_DIR" ]; then
+_homeDotDir="${HOME}/.dotfiles"
+if ! [ -d "$_homeDotDir" ]; then
   # Take action if $DOT_DIR exists. #
-  echo "Creating ~.dotfiles directory as it doesn't exist ${DOT_DIR}..."
+  echo "Creating ~.dotfiles directory as it doesn't exist ${_homeDotDir}..."
 fi
 
 if ! [ -x "$(command -v ansible)" ]; then
@@ -19,14 +20,13 @@ if ! [ -x "$(command -v ansible)" ]; then
   sudo apt install ansible
 fi
 
-INSTALL_DIR=`pwd`
-echo "Installing config files in ${DOT_DIR}..."
-sudo cp ${INSTALL_DIR}/roles/git/files/gitignore_global.link ${DOT_DIR}/.
-sudo cp ${INSTALL_DIR}/roles/bash/files/alias ${DOT_DIR}/.
+_installDir=`pwd`
+echo "Installing config files in ${_homeDotDir}..."
+sudo cp ${_installDir}/roles/git/files/gitignore_global.link ${_homeDotDir}/.
 
 # ansible-galaxy collection install community.general
 
-ansible-playbook -i ${INSTALL_DIR}/hosts ${INSTALL_DIR}/dotfiles.yml --ask-become-pass --tags $tags
+ansible-playbook -i ${_installDir}/hosts ${_installDir}/dotfiles.yml --ask-become-pass --tags $_tags
 
 if command -v terminal-notifier 1>/dev/null 2>&1; then
   terminal-notifier -title "dotfiles: Bootstrap complete" -message "Successfully set up dev environment."
