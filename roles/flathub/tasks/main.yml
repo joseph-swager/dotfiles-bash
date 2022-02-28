@@ -25,4 +25,13 @@
   tags:
     - "flathub"
     - "photo"
+
+# Leaving here just in case a flatpak is a better way to install neovim of snaps     
+# - name: "Install NeoVIM Flatpak"
+#   community.general.flatpak:
+#     name: "io.neovim.nvim"
+#     state: "present"
+#   become: true
+#   tags:
+#     - "nvim"
 ...

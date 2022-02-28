@@ -9,3 +9,13 @@
   tags:
     - "snap"
     - "development"
+
+- name: "Install neovim snap package"
+  snap:
+    name: "nvim"
+    classic: yes
+  become: yes
+  become_user: root
+  become_method: sudo
+  tags:
+    - "nvim"

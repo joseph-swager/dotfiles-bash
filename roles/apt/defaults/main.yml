@@ -1,6 +1,7 @@
 package_upgrade: yes
 packages:
   - ansible
+  - flatpak
   - build-essential
   - curl
   - htop

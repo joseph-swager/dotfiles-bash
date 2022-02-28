@@ -10,15 +10,18 @@
     - role: bash
       tags:
         - bash
-    # - role: vim
+    # - role: nvim
     #   tags:
-    #     - vim
+    #     - nvim
     # - role: tmux
     #   tags:
     #     - tmux
     - role: asdf
       tags:
         - asdf
+    # - role: terminal
+    #   tags:
+    #     - terminal
     # - role: python
     #   tags:
     #     - python
@@ -52,3 +55,6 @@
     # - role: redis
     #   tags:
     #     - redis
+    # - role: sdkman
+    #   tags:
+    #     - sdkman
