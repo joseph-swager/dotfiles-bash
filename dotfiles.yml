@@ -49,9 +49,9 @@
     - role: snap
       tags:
         - snap
-    # - role: node
-    #   tags:
-    #     - node
+    - role: node
+      tags:
+        - node
     # - role: redis
     #   tags:
     #     - redis
