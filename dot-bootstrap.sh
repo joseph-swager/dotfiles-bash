@@ -25,6 +25,7 @@ _installDir=`pwd`
 echo "Installing config files in ${_homeDotDir}..."
 sudo cp ${_installDir}/roles/git/files/gitignore_global.link ${_homeDotDir}/.
 
+# need to uncomment for first run...after comment out again to speed up script run times
 # ansible-galaxy collection install community.general
 
 ansible-playbook -i ${_installDir}/hosts ${_installDir}/dotfiles.yml --ask-become-pass --tags $_tags

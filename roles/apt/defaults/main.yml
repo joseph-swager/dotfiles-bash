@@ -25,6 +25,7 @@ packages:
   # Pre-req for adding repo for sublime text
   - apt-transport-https
   - docker.io
+  - snapd
 
   # GUI
   - chromium-browser
