@@ -12,6 +12,7 @@ fi
 _homeDotDir="${HOME}/.dotfiles"
 if ! [ -d "$_homeDotDir" ]; then
   # Take action if $DOT_DIR exists. #
+  mkdir ${_homeDotDir}
   echo "Creating ~.dotfiles directory as it doesn't exist ${_homeDotDir}..."
 fi
 
