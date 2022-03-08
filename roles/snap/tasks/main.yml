@@ -19,3 +19,16 @@
   become_method: sudo
   tags:
     - "nvim"
+    - "ide"
+    - "development"
+
+- name: "Install heroku snap package"
+  snap:
+    name: "heroku"
+    classic: yes
+  become: yes
+  become_user: root
+  become_method: sudo
+  tags:
+    - "heroku"
+    - "cloud"

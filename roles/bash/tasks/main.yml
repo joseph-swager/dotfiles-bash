@@ -2,7 +2,6 @@
   stat: path="{{dotfiles_user_home}}/.bash_aliases"
   register: alias_stat
   tags:
-    - "bash"
     - "aliases"
 
 - name: "Back up .bash_aliases"
@@ -11,7 +10,6 @@
     creates: "{{dotfiles_user_home}}/.dotfiles/.bash_aliases.bak"
   when: alias_stat.stat.exists
   tags:
-    - "bash"
     - "aliases"
 
 - name: "Make sure .bash_aliases is up to date"
@@ -19,7 +17,6 @@
     src: "alias.j2"
     dest: "{{dotfiles_user_home}}/.bash_aliases"
   tags:
-    - "bash"
     - "aliases"
 
 # .bashrc 
@@ -28,7 +25,6 @@
   stat: path="{{dotfiles_user_home}}/.bashrc"
   register: bashrc_stat
   tags:
-    - "bash"
     - "bashrc"
 
 - name: "Back up .bashrc"
@@ -37,7 +33,6 @@
     creates: "{{dotfiles_user_home}}/.dotfiles/.bashrc.bak"
   when: bashrc_stat.stat.exists
   tags:
-    - "bash"
     - "bashrc"
 
 - name: "Make sure .bashrc is up to date"
@@ -45,5 +40,4 @@
     src: "bashrc.j2"
     dest: "{{dotfiles_user_home}}/.bashrc"
   tags:
-    - "bash"
     - "bashrc"

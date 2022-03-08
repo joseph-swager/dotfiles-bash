@@ -4,17 +4,14 @@
   failed_when: erlang_add == 2
   tags:
     - "development"
-    - erlang
 
 - name: "Install erlang versions"
   command: asdf install erlang {{item}}
   loop: "{{versions}}"
   tags:
     - "development"
-    - erlang
 
 - name: Set global version for erlang to {{versions[0]}}
   command: "asdf global erlang {{versions[0]}}"
   tags:
     - "development"
-    - erlang

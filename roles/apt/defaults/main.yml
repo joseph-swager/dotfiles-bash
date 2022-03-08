@@ -13,6 +13,7 @@ packages:
   - libreadline-dev
   - libsqlite3-dev
   - libssl-dev
+  - libpq-dev
   - llvm
   - make
   - gcc
@@ -36,6 +37,11 @@ packages:
 
   # Apps
   - sublime-text
+  - wkhtmltopdf 
+  - postgresql-client
+  - inotify-tools 
+  - imagemagick
+  - seahorse
 
 # leave for removing packages
 # remove_packages:

@@ -1,8 +1,6 @@
 ---
 # tasks/main.yml for flathub
 
-
-
 ## Repository Management
 
 - name: "Manage flathub Repository"
@@ -13,7 +11,6 @@
     method: "{{ flathub_repository_method }}"
   become: true
   tags:
-    - "flathub"
     - "repository"
 
 ## Dependency Management
@@ -23,15 +20,69 @@
     state: "present"
   become: true
   tags:
-    - "flathub"
     - "photo"
 
-# Leaving here just in case a flatpak is a better way to install neovim of snaps     
-# - name: "Install NeoVIM Flatpak"
-#   community.general.flatpak:
-#     name: "io.neovim.nvim"
-#     state: "present"
-#   become: true
-#   tags:
-#     - "nvim"
+- name: "Install FontForge Flatpak"
+  community.general.flatpak:
+    name: "org.fontforge.FontForge"
+    state: "present"
+  become: true
+  tags:
+    - "font"
+
+- name: "Install Amazon Workspace Flatpak"
+  community.general.flatpak:
+    name: "com.amazon.Workspaces"
+    state: "present"
+  become: true
+  tags:
+    - "aws"
+    - "development"
+    - "cloud"
+
+- name: "Install Arduino IDE Flatpak"
+  community.general.flatpak:
+    name: "cc.arduino.arduinoide"
+    state: "present"
+  become: true
+  tags:
+    - "arduino"
+    - "development"
+    - "ide"
+
+- name: "Install Fritzing Flatpak"
+  community.general.flatpak:
+    name: "org.fritzing.Fritzing"
+    state: "present"
+  become: true
+  tags:
+    - "arduino"
+    - "development"
+    - "ide"
+
+- name: "Install Insomnia Flatpak"
+  community.general.flatpak:
+    name: "rest.insomnia.Insomnia"
+    state: "present"
+  become: true
+  tags:
+    - "development"
+
+- name: "Install Zoom Flatpak"
+  community.general.flatpak:
+    name: "us.zoom.Zoom"
+    state: "present"
+  become: true
+  tags:
+    - "zoom"
+
+- name: "Install MS Teams Flatpak"
+  community.general.flatpak:
+    name: "com.microsoft.Teams"
+    state: "present"
+  become: true
+  tags:
+    - "teams"
+
+    # com.microsoft.Teams
 ...

@@ -6,7 +6,6 @@
   become_user: root
   become_method: sudo
   tags:
-    - "apt"
     - "repository"
 
 - name: "Add sublimetext stable repository into sources list"
@@ -17,7 +16,6 @@
   become_user: root
   become_method: sudo
   tags:
-    - "apt"
     - "repository"
   
 - name: Upgrade apt
@@ -27,7 +25,6 @@
   become_user: root
   become_method: sudo
   tags:
-    - "apt"
     - "repository"
 
 - name: Install apt packages
@@ -38,8 +35,7 @@
   become_user: root
   become_method: sudo
   loop: "{{ packages }}"
-  tags:
-    - "apt"
+
 
 # leave if we ever need to remove packages
 # - name: Remove apt packages

@@ -4,17 +4,14 @@
   failed_when: elixir_add == 2
   tags:
     - "development"
-    - "elixir"
 
 - name: "Install elixir versions"
   command: asdf install elixir {{item}}
   loop: "{{versions}}"
   tags:
     - "development"
-    - "elixir"
 
 - name: Set global version for elixir to {{versions[0]}}
   command: "asdf global elixir {{versions[0]}}"
   tags:
     - "development"
-    - "elixir"

@@ -9,3 +9,5 @@ rustup_cargo_home_suffix: ".cargo"
 rustup_cargo_crates:
   - fd-find
   - ripgrep
+  - lsd
+  - starship

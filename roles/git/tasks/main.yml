@@ -4,7 +4,6 @@
   become_user: root
   become_method: sudo
   tags:
-    - "git"
     - "repository"
     - "development"
 
@@ -15,7 +14,6 @@
     state: link
     force: yes
   tags:
-    - "git"
     - "repository"
     - "development"
 
@@ -23,7 +21,6 @@
   stat: path="{{dotfiles_user_home}}/.gitconfig"
   register: gitconfig_stat
   tags:
-    - "git"
     - "repository"
     - "development"
 
@@ -33,7 +30,6 @@
     creates: "{{dotfiles_user_home}}/.gitconfig.bak"
   when: gitconfig_stat.stat.exists
   tags:
-    - "git"
     - "repository"
     - "development"
 
@@ -42,6 +38,5 @@
     src: "gitconfig.j2"
     dest: "{{dotfiles_user_home}}/.gitconfig"
   tags:
-    - "git"
     - "repository"
     - "development"

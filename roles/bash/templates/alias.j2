@@ -9,10 +9,9 @@ alias gcs='git commit -S'
 alias gd='git diff'
 alias gaa='git add .'
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+# directory aliases
+alias lla='lsd -ali'
+alias ll='lsd -li'
 
 # source ~/.bashrc
 alias sbrc="source $HOME/.bashrc"
@@ -60,3 +59,6 @@ function gsync() {
 # Xclip copy paste made easy
 alias clipcopy="xclip -sel clip"
 alias clippaste="xclip -out -sel clip"
+
+# Neovim my defualt VI editor
+alias vi='nvim'

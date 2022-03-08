@@ -3,18 +3,15 @@
   register: ruby_add
   failed_when: ruby_add == 2
   tags:
-    - "ruby"
     - "development"
 
 - name: "Install ruby versions"
   command: asdf install ruby {{item}}
   loop: "{{versions}}"
   tags:
-    - "ruby"
     - "development"
 
-- name: "Set global version for ruby to {{versions[0]}}"
-  command: "asdf global ruby {{versions[0]}}"
+- name: "Set global version for ruby to {{versions[2]}}"
+  command: "asdf global ruby {{versions[2]}}"
   tags:
-    - "ruby"
     - "development"

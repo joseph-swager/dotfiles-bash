@@ -5,21 +5,18 @@
     key: "{{ rustup_user }}"
     split: ":"
   tags:
-    - "rust"
     - "development"
 
 - name: "Define rustup user home"
   set_fact:
     rustup_user_home: "{{ getent_passwd[rustup_user][4] }}"
   tags:
-    - "rust"
     - "development"
 
 - name: "Define rustup user shell"
   set_fact:
     rustup_user_shell: "{{ getent_passwd[rustup_user][5] }}"
   tags:
-    - "rust"
     - "development"
 
 - name: "Create temporary install directory"
@@ -30,7 +27,6 @@
   register: temp_install_dir
   changed_when: false
   tags:
-    - "rust"
     - "development"
 
 - name: "Install RustUp"
@@ -45,7 +41,6 @@
     RUSTUP_HOME: "{{ rustup_user_home }}/{{ rustup_home_suffix }}"
     CARGO_HOME: "{{ rustup_user_home }}/{{ rustup_cargo_home_suffix }}"
   tags:
-    - "rust"
     - "development"
 
 - name: Install cargo crates
@@ -67,7 +62,6 @@
   when:
     - rustup_cargo_crates is defined
   tags:
-    - "rust"
     - "development"
 
 
@@ -80,7 +74,6 @@
   when:
     - rustup_configure_shell|default(true)
   tags:
-    - "rust"
     - "development"
 
 - name: Clenaup TemDir
@@ -89,5 +82,4 @@
     state: absent
   changed_when: false
   tags:
-    - "rust"
     - "development"

@@ -52,6 +52,9 @@
     - role: node
       tags:
         - node
+    - role: nerdfont
+      tags:
+        - nerdfont
     # - role: redis
     #   tags:
     #     - redis
